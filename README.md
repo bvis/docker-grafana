@@ -1,11 +1,16 @@
 # basi/grafana
 
-It allows to automatize the creation of data sources when launching the image.
+Grafana with some limited automated data sources creation.
+
+## Description
 
 It's ready for add some specific prometheus and elasticsearch data sources. If you think it has sense to generalize its implementation
 and add more data sources just tell me.
 
-For example:
+At least if it does not work for you (most probably), you can take the idea. ;)
+
+## Usage
+You can launch it as a swarm service:
 
 ```
 docker\
