@@ -18,7 +18,6 @@ docker\
   --name grafana \
   --network monitoring \
   --publish 3000:3000 \
-  -e "GF_SERVER_ROOT_URL=http://grafana.mydomain" \
   -e "GF_SECURITY_ADMIN_PASSWORD=ADMIN_PASSWORD" \
   -e "PROMETHEUS_ENDPOINT=http://prometheus:9090" \
   -e "ELASTICSEARCH_ENDPOINT=http://elasticsearch:9090" \
