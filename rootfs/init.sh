@@ -5,14 +5,6 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-if [ ! -z ${GOOGLE_AUTH_CLIENT_ID+x} ]; then
-    sed -i "/^\[auth.google\]$/,/^\[/ s/^;enabled = false/enabled = true/" /etc/grafana/grafana.ini
-    #sed -i "/^\[auth.google\]$/,/^\[/ s/^;allow_sign_up = true/allow_sign_up = false/" /etc/grafana/grafana.ini
-    sed -i "/^\[auth.google\]$/,/^\[/ s/^;client_id = some_client_id/client_id = ${GOOGLE_AUTH_CLIENT_ID}/" /etc/grafana/grafana.ini
-    sed -i "/^\[auth.google\]$/,/^\[/ s/^;client_secret = some_client_secret/client_secret = ${GOOGLE_AUTH_CLIENT_SECRET}/" /etc/grafana/grafana.ini
-    printf "${GREEN}Google-Auth login activated!${NC}\n"
-fi
-
 exec /run.sh "$@" &
 
 for i in {90..0}; do

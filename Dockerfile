@@ -25,17 +25,13 @@ LABEL org.label-schema.vendor="basi" \
 PROMETHEUS_ENDPOINT=Prometheus address used to obtain data,\
 ELASTICSEARCH_ENDPOINT=Elasticsearch addres used to get annotations,\
 ELASTICSEARCH_USER=Elasticsearch user,\
-ELASTICSEARCH_PASSWORD=Elasticsearch password,\
-GOOGLE_AUTH_CLIENT_ID=Google Auth client id,\
-GOOGLE_AUTH_CLIENT_SECRET=Google Auth client secret" \
+ELASTICSEARCH_PASSWORD=Elasticsearch password" \
     org.label-schema.build-date=$build_date
 
 ENV "GF_SECURITY_ADMIN_PASSWORD=admin" \
     "PROMETHEUS_ENDPOINT=http://prometheus:9090" \
     "ELASTICSEARCH_ENDPOINT=http://elasticsearch:9200" \
     "ELASTICSEARCH_USER=readuser" \
-    "ELASTICSEARCH_PASSWORD=myelasticpass" \
-    "GOOGLE_AUTH_CLIENT_ID=" \
-    "GOOGLE_AUTH_CLIENT_SECRET="
+    "ELASTICSEARCH_PASSWORD=myelasticpass"
 
 ENTRYPOINT ["/init.sh"]

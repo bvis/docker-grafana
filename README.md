@@ -2,8 +2,6 @@
 
 Grafana with some limited automated data sources creation.
 
-It allows to activate Google Auth as login system.
-
 ## Description
 
 It's ready for add some specific prometheus and elasticsearch data sources. If you think it has sense to generalize its implementation
@@ -11,12 +9,8 @@ and add more data sources just tell me.
 
 At least if it does not work for you (most probably), you can take the idea. ;)
 
-To activate the grafana container with GoogleAuch you need to pass the variables:
-
-- GOOGLE_AUTH_CLIENT_ID
-- GOOGLE_AUTH_CLIENT_SECRET
-
 ## Usage
+
 To launch it as a docker container:
 
 ```
@@ -25,8 +19,9 @@ docker \
   -p 3000:3000 \
   -e "GF_SECURITY_ADMIN_PASSWORD=example" \
   -e "PROMETHEUS_ENDPOINT=http://prometheus:9090" \
-  -e "GOOGLE_AUTH_CLIENT_ID=my-google-auth-client-id" \
-  -e "GOOGLE_AUTH_CLIENT_SECRET=my-google-auth-secret" \
+  -e "ELASTICSEARCH_ENDPOINT=http://elasticsearch:9090" \
+  -e "ELASTICSEARCH_USER=readuser" \
+  -e "ELASTICSEARCH_PASSWORD=myelasticpass" \
   basi/grafana:latest
 ```
 
@@ -43,8 +38,6 @@ docker\
   -e "ELASTICSEARCH_ENDPOINT=http://elasticsearch:9090" \
   -e "ELASTICSEARCH_USER=readuser" \
   -e "ELASTICSEARCH_PASSWORD=myelasticpass" \
-  -e "GOOGLE_AUTH_CLIENT_ID=my-google-auth-client-id" \
-  -e "GOOGLE_AUTH_CLIENT_SECRET=my-google-auth-secret" \
   basi/grafana:latest
 
 ```
