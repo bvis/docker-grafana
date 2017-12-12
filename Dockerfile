@@ -1,14 +1,14 @@
-FROM grafana/grafana:4.5.2
+FROM grafana/grafana:4.6.2
 
 RUN apt-get update && apt-get install -y curl
 
 ADD rootfs /
 
-ARG "version=0.1.0-dev"
-ARG "build_date=unknown"
-ARG "commit_hash=unknown"
-ARG "vcs_url=unknown"
-ARG "vcs_branch=unknown"
+ARG version="0.1.0-dev"
+ARG build_date="unknown"
+ARG commit_hash="unknown"
+ARG vcs_url="unknown"
+ARG vcs_branch="unknown"
 
 LABEL org.label-schema.vendor="basi" \
     org.label-schema.name="Grafana" \
